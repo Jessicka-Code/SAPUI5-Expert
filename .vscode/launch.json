@@ -38,7 +38,7 @@
         "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
         "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Invoices/SAPUI5\"}"
       },
-      "envFile": "${workspaceFolder}/Invoices/SAPUI5/.env7",
+      "envFile": "${workspaceFolder}/Invoices/SAPUI5/.env13",
       "preLaunchTask": "Build Invoices"
     }
   ]
