@@ -1,0 +1,90 @@
+<mvc:View
+    controllerName="ABAP.capacitacion.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true" 
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+ 
+                  	<Table id="idProductsTable"
+                        mode="Delete"
+                        delete="onDeleteTable"
+		inset="false"
+		items="{
+			path: 'localModel>/Clientes',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+
+        	<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Clientes" level="H2"/>
+					<ToolbarSpacer />
+					
+                    <Button press="onAddTable" icon="sap-icon://add"/>
+
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>	
+		
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Nombre" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Ciudad" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Género" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Número de Viajes" />
+			</Column>
+			<Column
+				>
+				<Text text="Priority" />
+			</Column>
+            <Column hAlign="End">
+				<Text text="Saldo" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Active" press="onUpdateTable">
+				<cells>
+					<ObjectIdentifier
+						title="{localModel>name}"/>
+					<Text
+						text="{localModel>city}" />
+					<Text
+						text="{localModel>gender}" />
+					<Text text="{localModel>number_of_trips}"/>
+                    <Text text="{localModel>loyalty_member}"/>
+                    <Text text="{localModel>balance}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
